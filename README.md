@@ -1,4 +1,40 @@
 # dotnet-core
+# dotnet core 操作Oracle数据库(vs code 开发环境)
+1.创建一个solution，（ctrl+shift+p）
+2.右击公关创建的solution，选择add project，输入project名称，按两次回车
+3.在terminal中输入cd \project名称，回车,进入project目录
+4.输入dotnet add package "Oracle.ManagedDataAccess.core" 安装Oracle ManagedAccess支持
+5.完成后再main函数中加入如下代码
+using System;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
+ 
+
+namespace NetcoreOracleDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //string ConnectString = "WIN-RCFFIK7IK3D/ORCL;User ID=scott;PassWord=tiger";
+            string connstr=@"Data Source=(DESCRIPTION=
+                                      (ADDRESS= (PROTOCOL=TCP) (HOST = WIN-RCFFIK7IK3D)(PORT = 1521))
+                                           (CONNECT_DATA=
+                                                (SERVER = DEDICATED)
+                                                (SID=orcl)
+                                             )
+                                       );Persist Security Info=True;User Id=scott;Password=tiger;";
+            OracleConnection conn=new OracleConnection(connstr);
+            string sql="select count(1) from emp";
+            OracleCommand cmd=new OracleCommand(sql,conn);
+            conn.Open();
+            Console.WriteLine(cmd.ExecuteScalar());
+            conn.Close();
+            Console.ReadKey();
+        }
+    }
+}
+
 # .net core学习
 <a href="https://github.com/kennycaiguo/Bing.NetCore">Bing.NetCore</a><br/>
 <a href="https://github.com/kennycaiguo/Vue.NetCore">Vue.NetCore</a><br/>
