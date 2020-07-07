@@ -1,6 +1,45 @@
 # dotnet-core
 # <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2017/vs2019运行时老是出现脚本错误的方法</a>
 
+# dotnet Core 操作SQL server数据库
+1.创建一个 .net core 控制台应用程序
+2.添加“System.Data.SqlClient"
+具体方法：（1）visual studion ：点击-工具-nuget包管理工具-程序包管理控制台
+在下面的命令提示符中输入如下
+ps f:\>Install-Package "System.Data.SqlClient" 回车
+         （2）vs code：打开terminal窗口，输入dotnet add package "System.Data.SqlClient" 回车
+         
+3.以操作SQL server数据库中的Workers表为例：
+具体代码：
+using System;
+using System.Data.SqlClient;
+using System.Data;
+
+
+
+namespace dotnetCore_op_SQLServer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string connStr = "server=.;database=kennyDb;uid=kenny;password=kenny1975";
+            SqlConnection conn = new SqlConnection(connStr);
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from Workers", conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            foreach (DataRow r in dt.Rows)
+            {
+
+              Console.WriteLine($"{r["name"]} : {r["age"]} : {r["sal"]}");
+            }
+            conn.Close();
+            Console.ReadKey();
+        }
+    }
+}
+
+
 # dotnet core 操作Oracle数据库(vs code 开发环境)
 1.创建一个solution，（ctrl+shift+p）
 2.右击公关创建的solution，选择add project，输入project名称，按两次回车
