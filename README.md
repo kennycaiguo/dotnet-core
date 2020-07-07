@@ -1,5 +1,5 @@
 # dotnet-core
-# <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2019运行时老是出现脚本错误的方法</a>
+# <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2017/vs2019运行时老是出现脚本错误的方法</a>
 
 # dotnet core 操作Oracle数据库(vs code 开发环境)
 1.创建一个solution，（ctrl+shift+p）
