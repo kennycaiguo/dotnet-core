@@ -1,4 +1,5 @@
 # dotnet-core
+# <a href="https://github.com/52abp">.net core 信息网站52abp github</a>
 # <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2017/vs2019运行时老是出现脚本错误的方法</a>
 
 # dotnet Core 操作SQL server数据库
