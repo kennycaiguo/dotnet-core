@@ -1,7 +1,7 @@
 # dotnet-core
 # <a href="https://github.com/52abp">.net core 学习网站52abp github</a>
 # <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2017/vs2019运行时老是出现脚本错误的方法</a>
-
+# <a href="https://github.com/kennycaiguo/dotnet-core/blob/master/SqlUtils.cs">自己封装的sql server工具类</a>
 # dotnet Core 操作SQL server数据库
 1.创建一个 .net core 控制台应用程序
 2.添加“System.Data.SqlClient"
