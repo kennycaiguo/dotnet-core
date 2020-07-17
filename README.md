@@ -2,6 +2,7 @@
 # <a href="https://github.com/52abp">.net core 学习网站52abp github</a>
 # <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2017/vs2019运行时老是出现脚本错误的方法</a>
 # <a href="https://github.com/kennycaiguo/dotnet-core/blob/master/SqlUtils.cs">自己封装的sql server工具类</a>
+# <a href="https://github.com/kennycaiguo/asp.net/blob/master/%E5%B0%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%A1%A8%E7%9A%84%E5%86%85%E5%AE%B9%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%88%B0treeview%E6%8E%A7%E4%BB%B6%E4%B8%AD.txt">将数据库的表的内容动态添加到treeview控件中</a>
 # dotnet Core 操作SQL server数据库
 1.创建一个 .net core 控制台应用程序
 2.添加“System.Data.SqlClient"
