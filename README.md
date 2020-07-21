@@ -1,5 +1,6 @@
 # dotnet-core
 # <a href="https://github.com/52abp">.net core 学习网站52abp github</a>
+# <a href="https://docs.microsoft.com/zh-cn/ef/core/providers/?tabs=dotnet-core-cli">ef core数据库提供程序</a>
 # <a href="https://www.jianshu.com/p/774287dcdd4e">解决vs2017/vs2019运行时老是出现脚本错误的方法</a>
 # <a href="https://github.com/kennycaiguo/dotnet-core/blob/master/SqlUtils.cs">自己封装的sql server工具类</a>
 # <a href="https://github.com/kennycaiguo/asp.net/blob/master/%E4%BD%BF%E7%94%A8libMan%E5%AE%89%E8%A3%85bootstrap.docx">libMan安装bootstrap</a>
