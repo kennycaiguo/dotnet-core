@@ -15,6 +15,58 @@ PM >Install-Package Microsoft.EntityFrameworkCore.Tools
 Get-Help about_EntityFrameworkCore
 
 显示一个类似一匹马的图案以及常用命令列表
+
+# .Net Core 3.1 EF Core Migration使用CLI数据迁移和同步
+    1、创建迁移文件，迁移文件名必填
+dotnet ef migrations add 迁移文件名
+    2、撤销迁移，只能在未更新数据库前撤销
+dotnet ef migrations remove
+    3、更新到数据库
+dotnet ef database update
+     4、删除数据库
+    注意不是删除数据更改，是删除数据库，慎用。
+dotnet ef database drop
+ 
+## 问题与解决
+    1、问题
+无法执行，因为找不到指定的命令或文件。
+可能的原因包括:
+*你拼错了内置的 dotnet 命令。
+*你打算执行 .NET Core 程序，但 dotnet-install 不存在。
+*你打算运行全局工具，但在路径上找不到名称前缀为 dotnet 的可执行文件。
+ 
+ 解决：打开CMD，输入：
+dotnet tool install -g dotnet-ef
+    2、问题
+The EF Core tools version '3.1.0' is older than that of the runtime '3.1.2'. Update the tools for the latest features and bug fixes.
+解决：需要更新EF Core tools版本，CMD中执行：
+dotnet tool update -g dotnet-ef
+    3、问题
+It was not possible to find any compatible framework version
+The framework 'Microsoft.NETCore.App', version '3.1.2' was not found.
+- The following frameworks were found:
+2.1.9 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+2.1.15 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+3.1.1 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+You can resolve the problem by installing the specified framework and/or SDK.
+The specified framework can be found at:
+- https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=3.1.2&arch=x64&rid=win10-x64
+解决：到最后提供的网址下载SDK安装
+    4、问题
+No database provider has been configured for this DbContext. A provider can be configured by overriding the DbContext.OnConfiguring method or by using AddDbContext on the application service provider. If AddDbContext is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and passes it to the base constructor for DbContext.
+解决：需要在网站目录执行
+    5、问题
+More than one DbContext was found. Specify which one to use. Use the '-Context' parameter for PowerShell commands and the '--context' parameter for dotnet commands.
+解决：如果有多个DBContext，需要指定迁移哪个DBContext。如：
+dotnet ef migrations add InitialCreate -c DBContext名称
+    6、问题
+Your target project 'Do.TmsApi' doesn't match your migrations assembly 'Do.Models'. Either change your target project or change your migrations assembly.
+Change your migrations assembly by using DbContextOptionsBuilder. E.g. options.UseSqlServer(connection, b => b.MigrationsAssembly("Do.TmsApi")). By default, the migrations assembly is the assembly containing the DbContext.
+Change your target project to the migrations project by using the Package Manager Console's Default project drop-down list, or by executing "dotnet ef" from the directory containing the migrations project.
+解决：如果DBContext和启动程序不在一个程序集，需要指定要迁移的程序集。代码中添加要迁移的程序集名称：
+options.UseSqlServer(connection, b => b.MigrationsAssembly("Do.TmsApi"))
+ 
+
 # dotnet Core 操作SQL server数据库
 1.创建一个 .net core 控制台应用程序
 2.添加“System.Data.SqlClient"
