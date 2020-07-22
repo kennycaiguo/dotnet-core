@@ -7,6 +7,14 @@
 # <a href="https://github.com/kennycaiguo/asp.net/blob/master/%E5%B0%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%A1%A8%E7%9A%84%E5%86%85%E5%AE%B9%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%88%B0treeview%E6%8E%A7%E4%BB%B6%E4%B8%AD.txt">将数据库的表的内容动态添加到treeview控件中</a>
 # <a href="https://github.com/kennycaiguo/asp.net/blob/master/treeview%E6%8E%A7%E4%BB%B6%E8%8A%82%E7%82%B9%E5%8B%BE%E9%80%89%E5%A4%84%E7%90%86.txt">treeview控件节点勾选处理.仅仅供参考，要根据实际业务适当调整代码</a>
 # <a href="https://github.com/kennycaiguo/asp.net/blob/master/vs%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6.docx">vs创建用户自定义控件</a>
+# nuget命令窗口执行迁移命令出错Upadate-Database : 无法将“Upadate-Database”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次。所在位置 行:1 字符: 1(因为没有安装工具集)的解决办法:
+安装 Microsoft.EntityFrameworkCore.Tools，具体操作
+PM >Install-Package Microsoft.EntityFrameworkCore.Tools
+如果一切工作正常，你应该能够运行这样的命令：
+
+Get-Help about_EntityFrameworkCore
+
+显示一个类似一匹马的图案以及常用命令列表
 # dotnet Core 操作SQL server数据库
 1.创建一个 .net core 控制台应用程序
 2.添加“System.Data.SqlClient"
